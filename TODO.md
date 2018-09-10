@@ -44,41 +44,15 @@
   7 = 5 hours
   10 = full day + ??
 
-  *(5) add due date
-  *(7) time stamps (moment.js)
+  crud app where athlete can log game stats/keep notes/see averages
+  
+  (10) multiple input text areas/with stat type (points, assists, steals, etc.)
   (5) format the display of the items in a list (need to add more detail)
-  (??) fix the layout
-  (7) color coded priority
-  highlight certain items
-  mouse over to see details
-  ability to select and delete multiple items (checkbox?)
-  add status/priorty and allow for sorting based on status/priority
-  Item categories
-  ability to add/leave comments on item
-  upload files/images
-  share item
-  drag and drop to arrange
-  search/filter on keyup/keydown
-  reminders? (push operation?)
-  secret corgi
-  delete item confirmation
-  fillet edges of boxes
-  font changes/choices? (google fonts)
-  Panic Button
-  Highlight based on status/priority/due date
-  options page (ability to set/toggle options)
-  show deleted items and allow for undelete
-  pagination (if more than 10 show a next button)
-  category pages (not really pages, just a show/hide trick)
-  strike-through completed/deleted items (styling)
-  add more items button, that shows another input section allowing for multiple items to be added at once
-  Fun stuff
-  auto-complete when searching/filtering
-
-
-
-
-
-
-
-
+  (5) fix the layout
+  (3) mouse over to see details
+  (3) ability to select and delete multiple items (checkbox?)
+  (7) Item categories
+  (3) ability to add/leave comments on item
+  (3) delete item confirmation
+  (5) category pages (not really pages, just a show/hide trick)
+  (7) auto-complete when searching/filtering
