@@ -1,0 +1,53 @@
+.body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.add-text-btn{
+  margin:10px;
+}
+
+.delete-text-btn{
+  margin: 10px;
+}
+
+.largeContainer{
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid black;
+  width: 500px;
+  padding: 10px;
+  display: inline-block;
+  
+}
+
+.container{
+  font-family: Arial, Helvetica, sans-serif;
+  width: 480px;
+  display: inline-block;
+
+}
+
+.games{
+  width: 480px;
+  min-height: 250px;
+  display: inline-block;
+  margin:10px;
+
+}
+
+.box{
+  border: 1px solid black;
+  width: 480px;
+  height: 45px;
+  margin:2px;
+  background-color: rgb(245,245,245)
+}
+
+.game{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.statLine{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}

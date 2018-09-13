@@ -49,10 +49,10 @@
   (10) multiple input text areas/with stat type (points, assists, steals, etc.)
   (5) format the display of the items in a list (need to add more detail)
   (5) fix the layout
-  (3) mouse over to see details
-  (3) ability to select and delete multiple items (checkbox?)
+  () mouse over to see details
+  () ability to select and delete multiple items (checkbox?)
   (7) Item categories
-  (3) ability to add/leave comments on item
+  () ability to add/leave comments on item
   (3) delete item confirmation
   (5) category pages (not really pages, just a show/hide trick)
-  (7) auto-complete when searching/filtering
+  () auto-complete when searching/filtering

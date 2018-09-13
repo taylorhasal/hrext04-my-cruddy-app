@@ -1,65 +1,101 @@
 $(document).ready(function() {
 
+  var displayGames = function(){
+    var keys = Object.keys(localStorage)
+    var $games = $('.games');
+    $games.html('')
+
+    for(var i = 0; i < keys.length; i++){
+    
+      var $box = $('<div class="box"></div>');
+      var $game = $('<div class="game"></div>');
+      var $statLine = $('<div class="statLine"></div>');
+    
+      var gameObj = JSON.parse(localStorage[keys[i]]) ;
+      var points = gameObj.points ;
+      var rebounds = gameObj.rebounds ;
+      var assists = gameObj.assists ;
+      var steals = gameObj.steals ;
+      var turnovers = gameObj.turnovers
+
+      $game.text(keys[i])
+      $game.prependTo($box);
+      $statLine.text('Points: ' + points + ' | Rebounds: ' + rebounds + ' | Assists: ' + assists + ' | Steals: ' + steals + ' | Turnovers: ' + turnovers);
+      $statLine.appendTo($box);
+      $box.appendTo($games);  
+    }
+  }
+  displayGames()  
+  //end of refresh page button
 
   $(".add-text-btn").on("click", function(){
+   
+    var gameObj = {}
+    
+    let opponent = $(".user-input-opponent").val();
+    let points = $(".user-input-points").val();
+    let rebounds = $(".user-input-rebounds").val();
+    let assists = $(".user-input-assists").val();
+    let steals = $(".user-input-steals").val();
+    let turnovers = $(".user-input-turnovers").val();
 
-    // store values
-    let inputKey = $(".user-input-title").val();
-    let inputValue = $(".user-input-body").val();
+    if(opponent === ''){
+      alert("ADD OPPONENT NAME")
+    } else {
+      $(".user-input-opponent").val("");
+      $(".user-input-points").val("");
+      $(".user-input-rebounds").val("");
+      $(".user-input-assists").val("");
+      $(".user-input-steals").val("");
+      $(".user-input-turnovers").val("");
 
-    // clear values
-    $(".user-input-title").val("");
-    $(".user-input-body").val("");
+      gameObj['points'] = points
+      gameObj['rebounds'] = rebounds
+      gameObj['assists'] = assists
+      gameObj['steals'] = steals
+      gameObj['turnovers'] = turnovers
 
-    console.log(inputKey, inputValue);
+      localStorage.setItem(opponent, JSON.stringify(gameObj));
+    
+      var localStorageKeys = Object.keys(localStorage)
+      var $games = $('.games');
+      $games.html('')
 
-    localStorage.setItem(inputKey, inputValue);
-    // data-
-    let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + ' ' +  localStorage.getItem(inputKey) + '</div>';
-    $(".display").html(itemHtml);
-    //console.log(localStorage);
-    // how can we delegate this event to the outer html node?
-    // https://learn.jquery.com/events/event-delegation/
-
-    $(".display-item").on("click", function(e){
-      // plop the key:value back into the input boxes
-
-      // get the values from the the divs?
-      console.log("key=> ", e.target.dataset.storageKey); // user-input-title
-      localStorage.getItem(e.target.dataset.storageKey); // user-input-body
-
-      // set those values in the form fields
-      $(".user-input-title").val(e.target.dataset.storageKey);
-      $(".user-input-body").val(localStorage.getItem(e.target.dataset.storageKey));
-    });
-
+      displayGames() 
+    }  
+  });
+  //end of click 'add text button'
+  
+  $(".games").on("click", ".game", function(e){
+    var gameObj = JSON.parse(localStorage.getItem(e.target.innerText))
+    
+    $(".user-input-opponent").val(e.target.innerText);
+    $(".user-input-points").val(gameObj.points);
+    $(".user-input-rebounds").val(gameObj.rebounds);
+    $(".user-input-assists").val(gameObj.assists);
+    $(".user-input-steals").val(gameObj.steals);
+    $(".user-input-turnovers").val(gameObj.turnovers);
+  
   });
 
+  $(".del-text-btn").on("click", function() {
+    alert('ITEM DELETED');
+    localStorage.removeItem( $('.user-input-opponent').val() );
+    $(".user-input-opponent").val("");
+    $(".user-input-points").val("");
+    $(".user-input-rebounds").val("");
+    $(".user-input-assists").val("");
+    $(".user-input-steals").val("");
+    $(".user-input-turnovers").val("");
 
-
-   // TODO add back in later
-   // $(".user-input").on("keyup", function(){
-   //   let inputValue = $(".user-input").val();
-   //   localStorage.setItem("testStorage", inputValue);
-   //   $(".display").text(localStorage.getItem("testStorage"));
-   // });
-
-   $(".del-text-btn").on("click", function() {
-     alert('item deleted? check the console'); // maybe change to a window.confirm
-     localStorage.removeItem( $('.user-input-title').val() ); // grab the title and plop here
-     $(".user-input-title").val("");
-     $(".user-input-body").val("");
-     // clearing display? what if I have multiple items?
-     // after item is removed from local storage, redisplay items from local storage
-     // refresh from storage?
-   });
-
+    displayGames() 
+  });
 
    // iterative approach to adding items
    // store data as stringified array of objects
    // store data with individual keys
   // how do we get keys? research Object.keys
 
-
+  //opponent, date, points, assists, steals, rebounds, blocks
 
 });
