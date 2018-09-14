@@ -92,11 +92,4 @@ $(document).ready(function() {
     displayGames()
   });
 
-   // iterative approach to adding items
-   // store data as stringified array of objects
-   // store data with individual keys
-  // how do we get keys? research Object.keys
-
-  //opponent, date, points, assists, steals, rebounds, blocks
-
 });

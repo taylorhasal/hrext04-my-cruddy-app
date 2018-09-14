@@ -2,6 +2,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.title{
+  font-size: 24px;
+}
+
 .add-text-btn{
   margin:10px;
 }
@@ -12,7 +16,7 @@
 
 .largeContainer{
   font-family: Arial, Helvetica, sans-serif;
-  border: 2px solid black;
+  border: 2.5px solid black;
   width: 500px;
   padding: 10px;
   display: inline-block;
@@ -36,7 +40,7 @@
   width: 480px;
   height: 45px;
   margin:2px;
-  background-color: rgb(245,245,245)
+  background-color: rgb(240,240,240)
 }
 
 .game{
@@ -47,4 +51,28 @@
 .statLine{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
+}
+
+.user-input-opponent{
+  margin:2px;
+}
+
+.user-input-points{
+  margin:2px;
+}
+
+.user-input-rebounds{
+  margin:2px;
+}
+
+.user-input-assists{
+  margin:2px;
+}
+
+.user-input-steals{
+  margin:2px;
+}
+
+.user-input-turnovers{
+  margin:2px;
 }
