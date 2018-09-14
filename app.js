@@ -28,6 +28,48 @@ $(document).ready(function() {
   displayGames()
   //end of refresh page button
 
+  var averages = function(){
+    var $averageBox = $('.averageBox');
+    var $game = $('<div class="game"></div>');
+    var $statLine = $('<div class="statLine"></div>');
+
+    var keys = Object.keys(localStorage);
+    var $container = $('.container');
+
+    var pointTotal = 0;
+    var reboundTotal = 0;
+    var assistTotal = 0;
+    var stealTotal = 0;
+    var turnoverTotal = 0;
+
+    $averageBox.html('')
+
+    for(var i = 0; i < keys.length; i++){
+      var gameObj = JSON.parse(localStorage[keys[i]]);
+
+      pointTotal += Number(gameObj.points) ;
+      reboundTotal += Number(gameObj.rebounds) ;
+      assistTotal += Number(gameObj.assists) ;
+      stealTotal += Number(gameObj.steals) ;
+      turnoverTotal += Number(gameObj.turnovers) ;
+    }
+
+    var ppg = pointTotal/keys.length ;
+    var rpg = reboundTotal/keys.length ;
+    var apg = assistTotal/keys.length ;
+    var spg = stealTotal/keys.length ;
+    var topg = turnoverTotal/keys.length ;
+
+    $game.text("Game Averages")
+    $game.prependTo($averageBox);
+    $statLine.text('PPG: ' + ppg.toFixed(2) + ' | RPG: ' + rpg.toFixed(2) + ' | APG: ' + apg.toFixed(2) + ' | SPG: ' + spg.toFixed(2) + ' | TOPG: ' + topg.toFixed(2));
+    $statLine.appendTo($averageBox);
+  }
+  averages()
+
+  //end of points average placeholder
+
+
   $(".add-text-btn").on("click", function(){
 
     var gameObj = {}
@@ -61,6 +103,7 @@ $(document).ready(function() {
       $games.html('')
 
       displayGames()
+      averages()
     }
   });
   //end of click 'add text button'
@@ -90,6 +133,7 @@ $(document).ready(function() {
     $(".user-input-turnovers").val("");
 
     displayGames()
+    averages()
   });
 
 });

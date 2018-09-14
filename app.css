@@ -6,6 +6,10 @@
   font-size: 24px;
 }
 
+.subtitle{
+  font-size: 16px;
+}
+
 .add-text-btn{
   margin:10px;
 }
@@ -36,6 +40,14 @@
 }
 
 .box{
+  border: 1px solid black;
+  width: 480px;
+  height: 45px;
+  margin:2px;
+  background-color: rgb(240,240,240)
+}
+
+.averageBox{
   border: 1px solid black;
   width: 480px;
   height: 45px;

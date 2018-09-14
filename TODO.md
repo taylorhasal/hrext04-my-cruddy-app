@@ -45,14 +45,10 @@
   10 = full day + ??
 
   crud app where athlete can log game stats/keep notes/see averages
-  
-  (10) multiple input text areas/with stat type (points, assists, steals, etc.)
-  (5) format the display of the items in a list (need to add more detail)
-  (5) fix the layout
-  () mouse over to see details
-  () ability to select and delete multiple items (checkbox?)
-  (7) Item categories
-  () ability to add/leave comments on item
-  (3) delete item confirmation
-  (5) category pages (not really pages, just a show/hide trick)
-  () auto-complete when searching/filtering
+
+  [X] multiple input text areas/with stat type (points, assists, steals, etc.)
+  [X] format the display of the items in a list (need to add more detail)
+  [X] fix the layout
+  [X] Item categories
+  [X] delete item confirmation
+  [X] category pages (not really pages, just a show/hide trick)
